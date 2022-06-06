@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-a = 89
-b = 10
-a, b = b, a
-print("a={:d} - b={:d}".format(a, b))
+def multiple_returns(sentence):
+    my_tuple = ()
+    if len(sentence) == 0:
+        my_tuple = 0, "None"
+    else:
+        my_tuple = len(sentence), sentence[0]
+    return my_tuple
