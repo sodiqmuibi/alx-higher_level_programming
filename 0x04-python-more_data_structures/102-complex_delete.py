@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-def best_score(a_dictionary):
-    if not a_dictionary:
-        return None
-    return max(a_dictionary)
+def complex_delete(a_dictionary, value):
+    for key in list(a_dictionary):
+        if a_dictionary[key] == value:
+            del a_dictionary[key]
+    return a_dictionary
