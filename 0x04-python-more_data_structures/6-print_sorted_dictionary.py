@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-def square_matrix_simple(matrix=[]):
-    new_matrix = [[x ** 2 for x in row] for row in matrix]
-    return new_matrix
+def print_sorted_dictionary(a_dictionary):
+    for i in sorted(a_dictionary):
+        print("{:s}: {}".format(i, a_dictionary[i]))
