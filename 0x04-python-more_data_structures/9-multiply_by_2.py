@@ -1,4 +1,6 @@
 #!/usr/bin/python3
-def square_matrix_simple(matrix=[]):
-    new_matrix = [[x ** 2 for x in row] for row in matrix]
-    return new_matrix
+def multiply_by_2(a_dictionary):
+    new_d = {}
+    for i in a_dictionary:
+        new_d[i] = a_dictionary[i] * 2
+    return new_d
