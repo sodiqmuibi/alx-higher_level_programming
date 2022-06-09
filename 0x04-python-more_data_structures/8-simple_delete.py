@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-def square_matrix_simple(matrix=[]):
-    new_matrix = [[x ** 2 for x in row] for row in matrix]
-    return new_matrix
+def simple_delete(a_dictionary, key=""):
+    if key in a_dictionary:
+        del a_dictionary[key]
+    return a_dictionary
