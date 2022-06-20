@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-def safe_print_list(my_list=[], x=0):
-    count = 0
-    for i in range(0, x):
-        try:
-            print("{:d}".format(my_list[i]), end="")
-            count += 1
-        except:
-            pass
-    print()
-    return count
+def safe_function(fct, *args):
+    import sys
+    try:
+        ret = fct(*args)
+        return ret
+    except Exception as e:
+        print("Exception: {}".format(e), file=sys.stderr)
+        return None
