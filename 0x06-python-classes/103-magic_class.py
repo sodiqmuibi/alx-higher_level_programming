@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-'''Module doc'''
-
-
 """Magic class from a given ByteCode."""
 import math
 
