@@ -1,23 +1,12 @@
 #!/usr/bin/python3
+"""Module lazy_matrix_mul
+Matrix multiplication using NumPy.
 """
-Module add-integer
-Adds two integer together
-"""
+import numpy
 
 
-def add_integer(a, b=98):
-    """Returns the addition of a and b,
-    or an error if a and b are not integers or floats
+def lazy_matrix_mul(m_a, m_b):
+    """Multiplies m_a and m_b using
+    matmul, and returns the result.
     """
-
-    if type(a) is not int and type(a) is not float:
-        raise TypeError("a must be an integer")
-    if type(b) is not int and type(b) is not float:
-        raise TypeError("b must be an integer")
-
-    if type(a) is float:
-        a = int(a)
-    if type(b) is float:
-        b = int(b)
-
-    return a + b
+    return numpy.matmul(m_a, m_b)
