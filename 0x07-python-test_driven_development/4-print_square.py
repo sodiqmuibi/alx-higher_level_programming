@@ -1,23 +1,22 @@
 #!/usr/bin/python3
 """
-Module add-integer
-Adds two integer together
+Module print_square
+Prints a square with the character #.
 """
 
 
-def add_integer(a, b=98):
-    """Returns the addition of a and b,
-    or an error if a and b are not integers or floats
+def print_square(size):
+    """Prints a square where size is
+    the length and width of the square.
     """
 
-    if type(a) is not int and type(a) is not float:
-        raise TypeError("a must be an integer")
-    if type(b) is not int and type(b) is not float:
-        raise TypeError("b must be an integer")
+    if type(size) is not int:
+        raise TypeError("size must be an integer")
 
-    if type(a) is float:
-        a = int(a)
-    if type(b) is float:
-        b = int(b)
+    if size < 0:
+        raise ValueError("size must be >= 0")
 
-    return a + b
+    for i in range(size):
+        for j in range(size):
+            print('#', end='')
+        print()
