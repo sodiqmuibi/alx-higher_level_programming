@@ -1,23 +1,41 @@
 #!/usr/bin/python3
 """
-Module add-integer
-Adds two integer together
+Module matrix_divided
+Divides each element of a matrix of numbers by a number
 """
 
 
-def add_integer(a, b=98):
-    """Returns the addition of a and b,
-    or an error if a and b are not integers or floats
+def matrix_divided(matrix, div):
+    """Returns a new matrix (list of list)
+    with the result of the division of matrix by div
+    rounded to 2 decimal places.
     """
 
-    if type(a) is not int and type(a) is not float:
-        raise TypeError("a must be an integer")
-    if type(b) is not int and type(b) is not float:
-        raise TypeError("b must be an integer")
+    if not isinstance(matrix, list) or len(matrix) == 0 or not matrix[0]:
+        raise TypeError("matrix must be a matrix (list of lists) " +
+                        "of integers/floats")
 
-    if type(a) is float:
-        a = int(a)
-    if type(b) is float:
-        b = int(b)
+    for row in matrix:
+        if len(row) == 0:
+            raise TypeError("matrix must be a matrix (list of lists) " +
+                            "of integers/floats")
+        for x in row:
+            if type(x) is not int and type(x) is not float:
+                raise TypeError("matrix must be a matrix (list of lists) " +
+                                "of integers/floats")
 
-    return a + b
+    len_rows = []
+    for row in matrix:
+        len_rows.append(len(row))
+    if not all(elem == len_rows[0] for elem in len_rows):
+        raise TypeError("Each row of the matrix must have the same size")
+
+    if type(div) is not int and type(div) is not float:
+        raise TypeError("div must be a number")
+
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
+
+    new_matrix = [[round(x / div, 2) for x in row] for row in matrix]
+
+    return new_matrix
