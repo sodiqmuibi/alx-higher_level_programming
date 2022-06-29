@@ -1,23 +1,20 @@
 #!/usr/bin/python3
 """
-Module add-integer
-Adds two integer together
+Module text_indentation
+Adds two new lines after a set of characters.
 """
 
 
-def add_integer(a, b=98):
-    """Returns the addition of a and b,
-    or an error if a and b are not integers or floats
+def text_indentation(text):
+    """Prints text with added two newlines
+    after each of these characters {'.', '?', ':'}.
     """
 
-    if type(a) is not int and type(a) is not float:
-        raise TypeError("a must be an integer")
-    if type(b) is not int and type(b) is not float:
-        raise TypeError("b must be an integer")
+    if type(text) is not str:
+        raise TypeError("text must be a string")
 
-    if type(a) is float:
-        a = int(a)
-    if type(b) is float:
-        b = int(b)
+    for delim in ".:?":
+        text = (delim + "\n\n").join(
+            [line.strip(" ") for line in text.split(delim)])
 
-    return a + b
+    print("{}".format(text), end="")
