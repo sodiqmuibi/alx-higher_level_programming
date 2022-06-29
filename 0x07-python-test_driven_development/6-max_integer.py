@@ -1,23 +1,18 @@
 #!/usr/bin/python3
-"""
-Module add-integer
-Adds two integer together
+"""Module to find the max integer in a list
 """
 
 
-def add_integer(a, b=98):
-    """Returns the addition of a and b,
-    or an error if a and b are not integers or floats
+def max_integer(list=[]):
+    """Function to find and return the max integer in a list of integers
+        If the list is empty, the function returns None
     """
-
-    if type(a) is not int and type(a) is not float:
-        raise TypeError("a must be an integer")
-    if type(b) is not int and type(b) is not float:
-        raise TypeError("b must be an integer")
-
-    if type(a) is float:
-        a = int(a)
-    if type(b) is float:
-        b = int(b)
-
-    return a + b
+    if len(list) == 0:
+        return None
+    result = list[0]
+    i = 1
+    while i < len(list):
+        if list[i] > result:
+            result = list[i]
+        i += 1
+    return result
