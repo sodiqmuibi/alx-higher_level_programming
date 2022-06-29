@@ -1,23 +1,19 @@
 #!/usr/bin/python3
 """
-Module add-integer
-Adds two integer together
+Module say_my_name
+Prints a given first name and last name.
 """
 
 
-def add_integer(a, b=98):
-    """Returns the addition of a and b,
-    or an error if a and b are not integers or floats
+def say_my_name(first_name, last_name=""):
+    """Prints a string with <first_name>
+    and <last_name>.
     """
 
-    if type(a) is not int and type(a) is not float:
-        raise TypeError("a must be an integer")
-    if type(b) is not int and type(b) is not float:
-        raise TypeError("b must be an integer")
+    if type(first_name) is not str:
+        raise TypeError("first_name must be a string")
 
-    if type(a) is float:
-        a = int(a)
-    if type(b) is float:
-        b = int(b)
+    if type(last_name) is not str:
+        raise TypeError("last_name must be a string")
 
-    return a + b
+    print("My name is {} {}".format(first_name, last_name))
